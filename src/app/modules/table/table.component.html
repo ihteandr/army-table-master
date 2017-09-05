@@ -1,0 +1,16 @@
+<h1>Table Master main table!</h1>
+<div class="ui grid">
+  <div class="ui row">
+    <div class="ui eleven wide column">
+      <tablet [codesCollection]="codesCollection"></tablet>
+    </div>
+    <div class="ui four wide column">
+      <h2> Panel</h2>
+      <div class="ui field">
+        <label>Codes</label>
+        <input class="main-codes" #codes
+               (keyup)="checkEnter($event, 'applyCodes', codes.value)"/>
+      </div>
+    </div>
+  </div>
+</div>

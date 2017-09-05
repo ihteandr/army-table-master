@@ -1,0 +1,26 @@
+<div class="login-page">
+  <div class="content">
+    <h2>Welcome to Table Master</h2>
+    <div class="ui form" [ngClass]="{'error': errors.length > 0}">
+      <div class="ui message error" *ngIf="errors.length > 0">
+        <ul>
+          <li *ngFor="let error of errors">{{error}}</li>
+        </ul>
+      </div>
+      <div class="field">
+        <label>Username</label>
+        <input type="text" #username
+               (keyup)="checkEnter($event, 'submit', username, password)"
+               name="username"
+               placeholder="Username">
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input type="password" #password
+               (keyup)="checkEnter($event, 'submit', username, password)"
+               name="password" placeholder="Password">
+      </div>
+      <button class="ui button" (click)="submit(username, password)" type="submit">Submit</button>
+    </div>
+  </div>
+</div>

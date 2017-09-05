@@ -1,0 +1,10 @@
+<div class="tablet-content">
+  <canvas #fabricContainer></canvas>
+  <tablet-area [area]="area"
+               [target]="canvas"
+               #rootArea></tablet-area>
+  <tablet-path [rootArea]='area'
+               *ngFor="let codes of codesCollection;"
+               [codes]="codes"
+               [target]="canvas"></tablet-path>
+</div>
